@@ -11,5 +11,12 @@
 				"Editor"
 			]
 		}
+	],
+	"Modules": [
+		{
+			"Name": "ProceduralSystem",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
 	]
 }
