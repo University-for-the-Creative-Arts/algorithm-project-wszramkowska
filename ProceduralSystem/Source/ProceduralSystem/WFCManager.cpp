@@ -290,19 +290,32 @@ void AWFCManager::SpawnTile(int32 X, int32 Y, const FWFCTileData& TileData)
         return;
     }
     
+    FTransform SpawnTransform;
+    SpawnTransform.SetLocation(Cell.WorldLocation);
+    SpawnTransform.SetRotation(FQuat::Identity);
+    SpawnTransform.SetScale3D(FVector::OneVector);
+    
     FActorSpawnParameters SpawnParams;
     SpawnParams.Owner = this;
+    SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
     
     AStaticMeshActor* TileActor = GetWorld()->SpawnActor<AStaticMeshActor>(
         AStaticMeshActor::StaticClass(),
-        Cell.WorldLocation,
-        FRotator::ZeroRotator,
+        SpawnTransform,
         SpawnParams
     );
     
-    if (TileActor)
+    if (TileActor && TileActor->GetStaticMeshComponent())
     {
+        // Set mobility first
+        TileActor->GetStaticMeshComponent()->SetMobility(EComponentMobility::Movable);
+        
+        // Then set the mesh
         TileActor->GetStaticMeshComponent()->SetStaticMesh(TileData.TileMesh);
+        
+        // Optional: Set it back to static for better performance (if you don't need to move it)
+        // TileActor->GetStaticMeshComponent()->SetMobility(EComponentMobility::Static);
+        
         TileActor->SetActorLabel(FString::Printf(TEXT("Tile_%d_%d_%s"), X, Y, *TileData.TileName));
         
         Cell.SpawnedActor = TileActor;
