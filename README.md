@@ -16,6 +16,6 @@ Everything in the system is procedural. No layouts or patterns are created by ha
 
 To keep performance stable, the system limits how many times it can update neighboring cells in one step. Small grids can be generated instantly, while larger grids are built smoothly over time. Overall, this project shows how simple rules and constraints can be used to create varied and believable levels automatically.
 
-![WFC 1](assets/WFC-1.gif)
+![WFC 1](assets/WFC_1.gif)
 
-![WFC 2](assets/WFC-2.gif)
+![WFC 2](assets/WFC_2.gif)
