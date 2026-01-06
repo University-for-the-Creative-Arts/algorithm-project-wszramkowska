@@ -15,3 +15,7 @@ The main rule of the system is socket matching. Two tiles can only be neighbors 
 Everything in the system is procedural. No layouts or patterns are created by hand. The final result depends entirely on the tile rules and random choices made during generation. This makes the system flexible and easy to expand. It can be extended to 3D by adding vertical connections, or completely changed by using a different set of tiles.
 
 To keep performance stable, the system limits how many times it can update neighboring cells in one step. Small grids can be generated instantly, while larger grids are built smoothly over time. Overall, this project shows how simple rules and constraints can be used to create varied and believable levels automatically.
+
+![WFC 1](assets/WFC-1.gif)
+
+![WFC 2](assets/WFC-2.gif)
