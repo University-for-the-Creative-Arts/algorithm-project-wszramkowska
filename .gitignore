@@ -1,0 +1,57 @@
+# Visual Studio / Rider
+.vs/
+.idea/
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic / Static libraries
+*.so
+*.dylib
+*.dll
+*.lib
+*.a
+
+# Executables
+*.exe
+*.out
+*.app
+*.ipa
+
+# Project files (can be regenerated)
+*.xcodeproj
+*.xcworkspace
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+.vsconfig
+
+# Unreal auto-generated / cache folders
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Plugin auto-generated files
+Plugins/**/Binaries/
+Plugins/**/Intermediate/
+
+# Ignore Starter Content (huge)
+Content/StarterContent/
+
+# Precompiled assets (if you have custom generated)
+*_BuiltData.uasset
+
+# Optional: keep icons in Build folder
+!Build/**/*.ico
